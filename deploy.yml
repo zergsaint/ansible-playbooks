@@ -1,0 +1,30 @@
+# playbook.yml
+---
+- name Install PowerDNS server
+- hosts: all
+  user: root
+
+  roles:
+    - mysql
+    - powerdns
+    - quagga
+
+
+
+#    - name: 1. install powerdns-server
+#      apt: name=pdns-server state=present
+#
+#    - name: 2. install powerdns-recursor
+#      apt: name=pdns-recursor state=present
+#
+#    - name: 3. install powerdns-backend-mysql
+#      apt: name=pdns-backend-mysql state=present
+#      
+#    - name: 4. install mysql
+#      apt: name=mysql-server state=present#
+#
+#    - name: 5. install quagga
+#      apt: name=quagga state=present
+#
+#    - name: 6. start powerdns
+#      service: name=pdns-server state=running enabled=yes
