@@ -1,0 +1,3 @@
+---
+- name: restart pdns-server
+service: name=pdns-server state=restarted
