@@ -1,0 +1,8 @@
+---
+- name: Install quagga
+  apt: name=quagga state=present
+
+- name: Start quagga
+  service: name=quagga state=started enabled=true
+  
+#template bör fixas
