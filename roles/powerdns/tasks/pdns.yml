@@ -1,23 +1,8 @@
 ---
- - name: 1. install powerdns-server
-   apt: name=pdns-server state=present
-
- - name: 2. install powerdns-recursor
-   apt: name=pdns-recursor state=present
-
- - name: 3. install powerdns-backend-mysql
-   apt: name=pdns-backend-mysql state=present
-
- - name: 4. Start pdns Service
-   service: name=pdns-server state=started enabled=true
-   
-   
-   ##################################################
-   #---
-   #- name: Install pdns package
-   #  apt: name={{ item }} state=present
-   #  with_items:
-   #  - pdns-server
-   #  - pdns-recursor
-   #  - pdns-backend-mysql
+- name: Install pdns package
+   apt: name={{ item }} state=present
+    with_items:
+    - pdns-server
+    - pdns-recursor
+    - pdns-backend-mysql
    
